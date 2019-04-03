@@ -1,0 +1,9 @@
+data atual: 1988
+
+nascimentos:
+stefen: 1948
+putin: 1953
+igor: 1915
+vladmir: 1927
+senha 5755 * 1988 = 11440940
+

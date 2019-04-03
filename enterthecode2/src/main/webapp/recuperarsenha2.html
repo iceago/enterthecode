@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>ENTER THE CODE - Recuperar senha</title>
+        <link rel="stylesheet" href="./css/estilopagweb.css">
+        <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">  
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <form v-on:submit.prevent="verifica">
+                <div id="recupsenha2">
+                    <input type="text" required placeholder="código" class="recupinp2" v-model="code">
+                    <div class="buttoncadas"><div class="outer"><div class="height"><div class="inner">
+                    <h2>VERIFICAR</h2><input id="submitbuttonrecupsenha" type="submit"><a href=""></a></div></div></div></div>
+                </div>
+            </form>
+        </div>
+        <div id="main">
+            <aside>
+                <nav>
+                    <div id="recuperasenhatelalateral">   
+                        <h2 id="txtcad">RECUPERAR SENHA</h2>               
+                        <div class="button"><div class="outer"><div class="height"><div class="inner">
+                        <h2>LOGIN</h2><a href="index.html"><div class="link"></div></a></div></div></div></div>   
+                    </div>
+                </nav>
+            </aside>
+        </div>
+
+        <script>
+            var ver = window.sessionStorage.getItem('verificrec');
+            if (ver <1 || ver == undefined) {
+                window.location = "negado.html";
+            } 
+
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    code: "",
+                    codecorreto: ""
+                }, methods: {
+                    pega: function (email) {
+                        axios.get('api/codrep/' + email)
+                        .then(response => {this.codecorreto = response.data.codigo})
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                    },
+                    verifica: function(){
+                        if(this.code==this.codecorreto){
+                            window.sessionStorage.setItem('verificrec', 2);
+                            window.location.href = "recuperarsenha3.html";
+                        }else{
+                            
+                        }
+                    }
+                }, mounted() {
+                    var e = window.sessionStorage.getItem('emailus');
+                    this.pega(e);
+                }
+            })
+        </script>
+
+    </body>
+</html>

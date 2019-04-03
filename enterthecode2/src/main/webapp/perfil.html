@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EnterTheCode - Perfil</title>
+    <link rel="stylesheet" href="./css/estilopagweb.css">
+    <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="telaperfil">
+
+
+    </div>
+    <div id="main">
+        <aside>
+            <nav>
+                <div id="cadastrotelalateral">
+                    <h2 id="txtcad">PERFIL</h2>
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>INICIO</h2>
+                                    <a href="inicio.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+    </div>
+    </div>
+    <div id="appperfil">
+        <p>{{usuarios.nome}}</p>
+        <p>{{usuarios.datanascimento}}</p>
+        <p>{{usuarios.login}}</p>
+        <p id="emailperfil">{{usuarios.email}}</p>
+    </div>
+    <script>
+        
+        var usuario = window.sessionStorage.getItem('usuario');
+
+        if (usuario == undefined) {
+            window.location = "index.html";
+        }
+        var app = new Vue({
+            el: '#appperfil',
+            data: {
+                usuarios: {}
+            }, methods: {
+                buscar: function (id) {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;                
+                    axios.get('api/usuario/' + id)
+                        .then(response => this.usuarios = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                }
+            }, mounted() {
+                var ids = window.sessionStorage.getItem('id');
+                this.buscar(ids);
+            }
+        })
+    </script>
+</body>
+
+</html>

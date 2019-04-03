@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>ENTER THE CODE - Recuperar senha</title>
+        <link rel="stylesheet" href="./css/estilopagweb.css">
+        <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">  
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <div id="recupsenha1">
+                <form v-on:submit.prevent="envia">
+                    <input type="email" required placeholder="e-mail" class="recupinp" v-model="email">
+                    <div class="buttoncadas"><div class="outer"><div class="height"><div class="inner">
+                    <h2>ENVIAR E-MAIL</h2><input id="submitbuttonrecupsenha" type="submit"><a href=""></a></div></div></div></div>
+                </form>
+            </div>
+        </div>
+        <div id="main">
+            <aside>
+                <nav>
+                    <div id="recuperasenhatelalateral">   
+                        <h2 id="txtcad">RECUPERAR SENHA</h2>               
+                        <div class="button"><div class="outer"><div class="height"><div class="inner">
+                        <h2>LOGIN</h2><a href="index.html"><div class="link"></div></a></div></div></div></div>   
+                    </div>
+                </nav>
+            </aside>
+        </div>
+
+        <script>
+
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    email: "",
+                    status:""
+                }, methods: {
+                    envia: function () {
+                        axios.post('api/senha/', {
+                            email: this.email
+                        }).then(response => {
+                            this.status = "Uma nova senha foi enviada para o email!!"                           
+                            if(response.data!="E"){
+                                window.sessionStorage.setItem('emailus', response.data);
+                                window.sessionStorage.setItem('verificrec', 1);
+                                window.location.href = "recuperarsenha2.html";     
+                            }                      
+                        }).catch(function (error) {
+                            this.status = "Não existe jogador cadastrado com esse email!!"
+                            console.log(error);                         
+                        });
+                    }
+                }
+            })
+        </script>
+    
+    </body>
+</html>

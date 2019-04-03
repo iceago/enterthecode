@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ENTER THE CODE - inicio</title>
+    <link rel="stylesheet" href="./css/estilopagweb.css">
+    <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/geral.js"></script>
+</head>
+
+<body>
+    <div id="loja">
+        <div id="quantidademods">
+            <p id="coletebtn2" class="mostradoresstore">Quantidade: {{mods.quantidadecoleteinicial}}</p>
+            <p id="hpbtn2" class="mostradoresstore">Quantidade: {{mods.quantidadepocaohp}}</p>
+            <p id="manabtn2" class="mostradoresstore">Quantidade: {{mods.quantidadepocaomana}}</p>
+            <p id="dobrodanobtn2" class="mostradoresstore">Quantidade: {{mods.quantidadedobrodano}}</p>
+            <p id="segundachancebtn2" class="mostradoresstore">Quantidade: {{mods.quantidadesegundachance}}</p>
+            <p id="starterbtn2" class="mostradoresstore">Quantidade: {{mods.quantidadestarterpack}}</p>
+            <p id="pontosmark" class="mostradoresstore">{{user.pontostotais}}</p>
+        </div>
+        <button id="coletebtn" v-on:click="salvar(1)" class="btnloja">COMPRAR</button>
+        <button id="hpbtn" v-on:click="salvar(2)" class="btnloja">COMPRAR</button>
+        <button id="manabtn" v-on:click="salvar(3)" class="btnloja">COMPRAR</button>
+        <button id="dobrodanobtn" v-on:click="salvar(4)" class="btnloja">COMPRAR</button>
+        <button id="segundachancebtn" v-on:click="salvar(5)" class="btnloja">COMPRAR</button>
+        <button id="starterbtn" v-on:click="salvar(6)" class="btnloja">COMPRAR</button>
+    </div>
+    <div id="main">
+        <aside>
+            <nav>
+                <div id="iniciolalateral">
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>JOGAR</h2>
+                                    <a href="paginajogo.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>LOJA</h2>
+                                    <a href="loja.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>HISTÓRIA</h2>
+                                    <a href="historia.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>PLACAR</h2>
+                                    <a href="placarlideres.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2 id="instrucoestxt">INSTRUÇÕES</h2>
+                                    <a href="intrucoes.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sairbtn">
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2 id="btnsairestilo">SAIR</h2>
+                                    <a href="#" onclick="logout()"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="btnperfil">
+                    <a href="perfil.html">PERFIL</a>
+                </button>
+            </nav>
+        </aside>
+    </div>
+    <script>
+        var usuario = window.sessionStorage.getItem('usuario');
+
+        if (usuario == undefined) {
+            window.location = "index.html";
+        }
+        app = new Vue({
+            el: '#loja',
+            data: {
+                mods: {},
+                user: {}
+            }, methods: {
+                buscarpessoal: function (id) {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/modificador/' + id)
+                        .then(response => this.mods = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                },
+                buscartotal: function (id) {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/usuario/' + id)
+                        .then(response => this.user = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                },
+                salvar: function(id){
+                    axios.post('api/modificador/'+id, {
+                            id: this.mods.id,
+                            idusuario: this.mods.idusuario,
+                            quantidadecoleteinicial: this.mods.quantidadecoleteinicial,
+                            quantidadepocaohp: this.mods.quantidadepocaohp,
+                            quantidadepocaomana: this.mods.quantidadepocaomana,
+                            quantidadedobrodano: this.mods.quantidadedobrodano,
+                            quantidadesegundachance: this.mods.quantidadesegundachance,
+                            quantidadestarterpack: this.mods.quantidadestarterpack                          
+                        }).then(Response => {
+                            var ids = window.sessionStorage.getItem('id');
+                            this.buscarpessoal(ids);
+                            this.buscartotal(ids);
+                            if(id==1 && this.user.pontostotais<5000){
+                                alert("Você não tem pontos suficientes para comprar esse modificador!!!")
+                            }
+                            if(id==2 && this.user.pontostotais<5000){
+                                alert("Você não tem pontos suficientes para comprar esse modificador!!!")
+                            }
+                            if(id==3 && this.user.pontostotais<5000){
+                                alert("Você não tem pontos suficientes para comprar esse modificador!!!")
+                            }
+                            if(id==4 && this.user.pontostotais<20000){
+                                alert("Você não tem pontos suficientes para comprar esse modificador!!!")
+                            }
+                            if(id==5 && this.user.pontostotais<10000){
+                                alert("Você não tem pontos suficientes para comprar esse modificador!!!")
+                            }
+                            if(id==6 && this.user.pontostotais<10000){
+                                alert("Você não tem pontos suficientes para comprar esse modificador!!!")
+                            }                  
+                        }).catch(function (error) {
+                            console.log(`Ocorreu um erro ao salvar: ${error}`);
+                        });
+                }
+            }, mounted() {
+                var ids = window.sessionStorage.getItem('id');
+                this.buscarpessoal(ids);
+                this.buscartotal(ids);
+            }
+        })
+        /*apson = new Vue({
+            el: '#loja',
+            data: {
+                mods2: {}
+            }, methods: {
+                salvar: function(id){
+                    axios.post('api/modificador/'+id, {
+                            id: mods2.id,
+                            idusuario: mods2.idusuario
+                        }).then(Response => {
+                            var ids = window.sessionStorage.getItem('id');
+                            this.buscarpessoal(ids);
+                            this.buscartotal(ids);
+                        }).catch(function (error) {
+                            console.log(`Ocorreu um erro ao salvar: ${error}`);
+                        });
+                },
+                buscarpessoal: function (id) {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/modificador/' + id)
+                        .then(response => this.mods2 = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                }
+            }, mounted() {
+                var ids = window.sessionStorage.getItem('id');
+                this.buscarpessoal(ids);
+            }
+        })*/
+    </script>
+</body>
+
+</html>

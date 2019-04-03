@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ENTER THE CODE - Cadastro</title>
+    <link rel="stylesheet" href="./css/estilopagweb.css">
+    <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vuejs-datepicker"></script>
+</head>
+
+<body>
+    <div id="cadastro1">
+        <form id="frm" v-on:submit.prevent="salvar">
+            <input type="text" maxlength="17" required v-model="nome" placeholder="Nome" class="cadinp">
+            <input type="date" required v-model="datanascimento" placeholder="Data de nascimento" class="cadinp">
+            <input type="text" maxlength="20" required v-model="login" placeholder="Login" class="cadinp">
+            <input type="email" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required v-model="email" placeholder="e-mail"
+                class="cadinp">
+            <input type="password" maxlength="10" required v-model="senha" placeholder="senha" class="cadinp">
+            <input type="password" maxlength="10" required v-model="senhaagain" placeholder="confirme a senha" class="cadinp">
+            <div class="buttoncadas">
+                <div class="outer">
+                    <div class="height">
+                        <div class="inner">
+                            <h2>CADASTRAR</h2>
+                        </div>
+                        <input id="submitbutton" type="submit">
+                        <a href=""></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var idusercads = 0;
+
+        function teste() {
+            document.forms[0].submit;
+        }
+
+        var app = new Vue({
+            el: '#cadastro1',
+            components: {
+                vuejsDatepicker
+            },
+            data: {
+                nome: "",
+                datanascimento: "",
+                login: "",
+                email: "",
+                senha: "",
+                senhaagain: "",
+                id: "",
+            }, methods: {
+                salvar: function () {
+                    var eigual = false;
+                    if (this.senha == this.senhaagain) {
+                        eigual = true;
+                    } else {
+                        alert(" As senhas não coincidem!!! ");
+                    }
+                    if (eigual) {
+                        axios.post('api/usuario/1', {
+                            datanascimento: this.datanascimento,
+                            email: this.email,
+                            login: this.login,
+                            nome: this.nome,
+                            senha: this.senha,
+                            pontostotais: "0"
+                        }).then(Response => {
+                            if (Response.data.id > 0) {
+                                this.id = Response.data.id;
+                                idusercads = this.id;
+                                let salvarjogador = async () => {
+                                    try {
+                                        var pontos = await this.salvarpontos();
+                                    } catch (error) {
+                                        console.log(error);
+                                    }
+                                }
+                                salvarjogador();
+                            } else {
+                                alert("Login ou o email ou o nome de Usuario já estão cadastrados!!!");
+                            }
+                        }).catch(function (error) {
+                            console.log(`Ocorreu um erro ao salvar: ${error}`);
+                        });
+                    }
+                },
+                salvarpontos: function () {
+                    axios.post('api/pontos', {
+                        idusuario: this.id,
+                        nomeusuario: this.nome,
+                        pontos: "0"
+                    }).then(Response => {
+                        let salvarjogador2 = async () => {
+                            try {
+                                var mods = await this.salvarmods();
+                            } catch (error) {
+                                console.log(error);
+                            }
+                        }
+                        salvarjogador2();
+                    }).catch(function (error) {
+                        console.log(`Ocorreu um erro ao salvar: ${error}`);
+                    });
+                },
+                salvarmods: function () {
+                    axios.post('api/modificador', {
+                        idusuario: idusercads,
+                        quantidadecoleteinicial: "0",
+                        quantidadepocaohp: "0",
+                        quantidadepocaomana: "0",
+                        quantidadedobrodano: "0",
+                        quantidadesegundachance: "0",
+                        quantidadestarterpack: "0"
+                    }).then(Response => {
+                        let salvarjogador3 = async () => {
+                            try {
+                                var conquistas = await this.salvarconquistas();
+                                window.location.href = await "cadstro2.html";
+                            } catch (error) {
+                                console.log(error);
+                            }
+                        }
+                        salvarjogador3();
+                    }).catch(function (error) {
+                        console.log(`Ocorreu um erro ao salvar: ${error}`);
+                    });
+                },
+                salvarconquistas: function () {
+                    axios.post('api/conquista', {
+                        idusuario: idusercads,
+                        segredosstalin: "false",
+                        foramaquinas: "false",
+                        easteregg: "false",
+                        entremelhores: "false",
+                        mestrepontos: "false",
+                        empresario: "false",
+                        conquistador: "false"
+                    }).then(Response => {
+                    }).catch(function (error) {
+                        console.log(`Ocorreu um erro ao salvar: ${error}`);
+                    });
+                }
+            }
+        })
+    </script>
+
+    <div id="main">
+        <aside>
+            <nav>
+                <div id="cadastrotelalateral">
+                    <h2 id="txtcad">CADASTRO</h2>
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>LOGIN</h2>
+                                    <a href="index.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+    </div>
+</body>
+
+</html>

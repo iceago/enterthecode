@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ENTER THE CODE</title>
+    <link rel="stylesheet" href="./css/estilopagweb.css">
+    <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="animation"></div>
+    <div id="main">
+        <aside>
+            <nav>
+                <div id="login">
+                    <div id="app">
+                        <div id="mensagemerro">{{ status }}</div>
+                        <form v-on:submit.prevent="logar">
+                            <div id="log">
+                                <h2 id="txtlog">LOGIN</h2>
+                                <input type="text" placeholder="login" v-model="login" class="inplog">
+                                <input type="password" placeholder="senha" v-model="senha" class="inplog">
+                            </div>
+                            <div id="btnlog">
+                                <div class="button">
+                                    <div class="outer">
+                                        <div class="height">
+                                            <div class="inner">
+                                                <h2>ENTRAR</h2>
+                                                <input id="submitbuttonlogin" type="submit">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="links">
+                        <a href="cadastro1.html">
+                            <p>Cadastrar-se</p>
+                        </a>
+                        <a href="recuperarsenha1.html">
+                            <p>Esqueceu o seu usuário ou senha?</p>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+        <div id="logocentral"></div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                login: "",
+                senha: "",
+                status: ""
+            }, methods: {
+                logar: function () {
+                    axios.post('api/login/', {
+                        username: this.login,
+                        password: this.senha
+                    }).then(response => {
+                        window.sessionStorage.setItem('usuario', response.data.username);
+                        window.sessionStorage.setItem('perfil', response.data.perfil);
+                        window.sessionStorage.setItem('token', response.data.token);
+                        window.sessionStorage.setItem('id', response.data.id);
+
+                        if (response.data.perfil == 1) {
+                            window.location = "logs.html";
+                        } else {
+                            window.location = "inicio.html";
+                        }
+
+                    }).catch(error => {
+                        this.status = "Login inválido!!"
+                        console.log(error);
+                    });
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

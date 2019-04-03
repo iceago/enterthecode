@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>ENTER THE CODE - inicio</title>
+        <link rel="stylesheet" href="./css/estilopagweb.css">
+        <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">  
+        <script src="js/geral.js"></script>  
+    </head>
+    <body>
+        <div id="instrucoes"></div>
+        <div id="main">
+            <aside>
+                <nav>
+                    <div id="iniciolalateral">
+
+                        <div class="button"><div class="outer"><div class="height"><div class="inner">
+                        <h2>JOGAR</h2><a href="paginajogo.html"><div class="link"></div></a></div></div></div></div>
+                    
+                        <div class="button"><div class="outer"><div class="height"><div class="inner">
+                        <h2>LOJA</h2><a href="loja.html"><div class="link"></div></a></div></div></div></div>
+                    
+                        <div class="button"><div class="outer"><div class="height"><div class="inner">
+                        <h2>HISTÓRIA</h2><a href="historia.html"><div class="link"></div></a></div></div></div></div>
+                    
+                        <div class="button"><div class="outer"><div class="height"><div class="inner">
+                        <h2>PLACAR</h2><a href="placarlideres.html"><div class="link"></div></a></div></div></div></div>  
+                    
+                        <div class="button"><div class="outer"><div class="height"><div class="inner">
+                        <h2 id="instrucoestxt">INSTRUÇÕES</h2><a href="intrucoes.html"><div class="link"></div></a></div></div></div></div>
+        
+                    </div>
+                    <div class="sairbtn">
+                            <div class="button"><div class="outer"><div class="height"><div class="inner">
+                            <h2 id="btnsairestilo">SAIR</h2><a href="#" onclick="logout()"></a></div></div></div></div>
+                    </div>
+                    <button type="button" id="btnperfil"><a href="perfil.html">PERFIL</a></button>
+                </nav>
+            </aside>
+        </div>
+        <script>
+                var usuario = window.sessionStorage.getItem('usuario');
+
+                if (usuario == undefined) {
+                    window.location = "index.html";
+                }        
+        </script> 
+    </body>
+</html>

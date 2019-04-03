@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ENTER THE CODE - inicio</title>
+    <link rel="stylesheet" href="./css/estilopagweb.css">
+    <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/geral.js"></script>
+</head>
+
+<body>
+    <div id="placar"></div>
+    <div id="placarval">
+        <div v-for="po in pontuacoes">
+            <p class="placpont">{{po.pontos}} | {{po.nomeusuario}}</p>
+        </div>
+    </div>
+    <div id="placarvalusu">
+        <p class="pacout">{{pontuac.nomeusuario}}</p>
+        <p class="pacout">{{pontuac.pontos}}</p>
+        <p class="pacout">{{colocacao}}</p>
+    </div>
+    <script>
+        var usuario = window.sessionStorage.getItem('usuario');
+
+        if (usuario == undefined) {
+            window.location = "index.html";
+        }
+        var app = new Vue({
+            el: '#placarval',
+            data: {
+                pontuacoes: []
+            }, methods: {
+                buscar: function () {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/pontos')
+                        .then(response => this.pontuacoes = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                }
+            }, mounted() {
+                this.buscar();
+            }
+        })
+
+        app = new Vue({
+            el: '#placarvalusu',
+            data: {
+                pontuac: {},
+                colocacao: ""
+            }, methods: {
+                buscarpessoal: function (id) {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/pontos/' + id)
+                        .then(response => this.pontuac = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                },
+                buscarcolocacao: function (id) {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/pontos/' + id + "/0")
+                        .then(response => this.colocacao = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                }
+            }, mounted() {
+                var ids = window.sessionStorage.getItem('id');
+                this.buscarpessoal(ids);
+                this.buscarcolocacao(ids);
+            }
+        })
+    </script>
+    <div id="main">
+        <aside>
+            <nav>
+                <div id="iniciolalateral">
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>JOGAR</h2>
+                                    <a href="paginajogo.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>LOJA</h2>
+                                    <a href="loja.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>HISTÓRIA</h2>
+                                    <a href="historia.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>PLACAR</h2>
+                                    <a href="placarlideres.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2 id="instrucoestxt">INSTRUÇÕES</h2>
+                                    <a href="intrucoes.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sairbtn">
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2 id="btnsairestilo">SAIR</h2>
+                                    <a href="#" onclick="logout()"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="btnperfil">
+                    <a href="perfil.html">PERFIL</a>
+                </button>
+            </nav>
+        </aside>
+    </div>
+</body>
+
+</html>

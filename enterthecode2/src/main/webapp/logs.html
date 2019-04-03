@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LOGs sistema ENTERTHECODE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/estilopagweb.css">
+    <link rel="shortcut icon" href="./imgwebpage/icone.png" type="image/x-icon">
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/geral.js"></script>
+</head>
+
+<body id="logsbody">
+    <!--<h1>LOGS</h1>
+    <button type="button">
+        <a href="inicio.html">VOLTAR</a>
+    </button>
+    <a href="#" onclick="logout()">sair</a><br>-->
+    <div id="fundologs"></div>
+    <div id="placarval2">
+        <div v-for="po in logs">
+            <p class="placpont2">{{po.id}} | {{po.nomeusuario}} | {{po.loginusuario}} | {{po.dataacesso}}</p>
+        </div>
+    </div>
+    <div id="titulologs"></div>
+    <div id="main2">
+        <aside>
+            <nav>
+                <div id="logstelalateral">
+                    <h2 id="txtcad">LOGS</h2>
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>INICIO</h2>
+                                    <a href="inicio.html">
+                                        <div class="link"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <div class="outer">
+                            <div class="height">
+                                <div class="inner">
+                                    <h2>SAIR</h2>
+                                    <a href="#" onclick="logout()"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+    </div>
+    <script>
+        var usuario = window.sessionStorage.getItem('usuario');
+
+        if (usuario == undefined) {
+            window.location = "index.html";
+        }
+        var perfil = window.sessionStorage.getItem('perfil');
+
+        if (perfil != 1) {
+            window.location = "negado.html";
+        }
+        var app = new Vue({
+            el: '#placarval2',
+            data: {
+                logs: []
+            }, methods: {
+                buscar: function () {
+                    const token = window.sessionStorage.getItem('token');
+                    axios.defaults.headers.common['Authorization'] = `${token}`;
+                    axios.get('api/protected/logs')
+                        .then(response => this.logs = response.data)
+                        .catch(function (error) {
+                            console.log(`Ocorreu um erro ao buscar: ${error}`);
+                        });
+                }
+            }, mounted() {
+                this.buscar();
+            }
+        })
+    </script>
+</body>
+
+</html>

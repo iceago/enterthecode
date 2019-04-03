@@ -1,0 +1,847 @@
+#main{
+    background-image: url("../imgwebpage/fundo.png");
+    height: 520px;
+    width: 1367px;
+    padding-top: 10%;
+}
+#main2{
+    background-image: url("../imgwebpage/fundo.png");
+    height: 1000px;
+    width: 1367px;
+    padding-top: 10%;
+    position: absolute;
+    position:fixed;
+}
+#mensagemerro{
+    margin-left: 32%;
+    color: red;
+}
+#acessonegadomain{
+    margin-left: 32%;
+    margin-top: 10%;
+    width: 500px;
+    height: 450px;
+    background-image: url("../imgwebpage/fundocormaisescura.png");
+    border: 5px black solid;
+}
+#acessonegadomain h2{
+    margin-left: 67px;
+    width: 80%;
+}
+#meme{
+    background-image: url("../imgwebpage/nomeme.gif");
+    width: 245px;
+    height: 245px;
+    margin-left: 25%;
+    margin-top: 35px;
+}
+#acessonegadomain .button{
+    width: 400px;
+    margin-left: 45px;
+}
+#acessonegadomain .button .outer .height .inner h2{
+    margin-left: 35px;
+}
+#titulologs{
+    background-image: url("../imgwebpage/titulologs.png");
+    width: 1021px;
+    height: 138px;
+    position: absolute;
+    top: 43px;
+    left: 314px;
+    position:fixed;
+}
+#fundologs{
+    background-image: url("../imgwebpage/telalogs.png");
+    width: 1021px;
+    height: 600px;
+    position: absolute;
+    top: 60px;
+    left: 314px;
+    position:fixed;
+}
+#btnlogs{
+    position: absolute;
+    left: 1000%;
+    top: 70px;
+    border: black 10px solid;
+    background-color: gray;
+}
+#btnlogs:hover{
+    background-color: yellow;
+}
+#emailperfil{
+    padding-top: 28px;
+    font-size: 27px;
+}
+#appperfil{
+    font-size: 35px;
+    position: absolute;
+    left: 700px;
+    top: 120px;
+    width: 400px;
+    height: 300px;
+}
+.btnloja{
+    background-color: rgb(151, 3, 3);
+    border: 3px black solid;
+}
+.btnloja:hover{
+    background-color: #cca216;
+    cursor: pointer;
+}
+#placarval{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 910px;
+    top: 162px;
+}
+#placarval2{
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    left: 910px;
+    top: 175px;
+}
+.placpont2{
+    padding-bottom: 5.5px;
+    font-size: 30px;
+}
+.placpont{
+    margin-bottom: -9.5px;
+    font-size: 23px;
+}
+#placarval2{
+    width: 700px;
+    margin-left: -350px;
+}
+#placarvalusu{
+    font-size: 20px;
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    left: 550px;
+    top: 317px;
+}
+.pacout{
+    padding-bottom: 30px;
+}
+#calen{
+    height: 33px;
+    float: left;
+    width: 500px; 
+    margin-left: 300px;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    overflow:hidden;
+    background-image: url("../imgwebpage/fundocor.png");
+}
+#logsbody{
+    margin: 0%;
+    padding: 0%;
+    overflow:visible;
+    background-image: url("../imgwebpage/fundocor.png");
+}
+#instrucoestxt{
+    padding-left: 40px;
+}
+#login{
+    height: 300px;
+    width: 275px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(63, 63, 63);
+    position: absolute;
+    left: 9px;
+    top: 130px;
+}
+.inp{
+    height: 40px;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+#btnsairestilo{
+    padding-left: 15px;
+}
+#txtlog{
+    padding-left: 35%;
+    color: rgb(21, 255, 0);
+    margin-left: -5%;
+}
+.btn1{
+    height: 40px;
+    width: 90%; 
+    border-radius: 5px;
+    margin-left: 14px;
+}
+a{
+    text-decoration: none;
+    color: white;    
+}
+#btnlog{
+    position: absolute;
+    left: 5%;
+    top: 45%; 
+    height: 100px;
+    width: 250px;
+}
+.inplog{
+    height: 40px;
+    float: left;
+    width: 240px;
+    margin-left: 0.6%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+#log{
+    position: absolute;
+    left: 5%;
+    top: 2%; 
+    width: 250px;
+}
+#links{
+    position: absolute;
+    left: 5%;
+    top: 70%;
+}
+#btn1:hover{
+    cursor: pointer;
+}
+#logocentral{
+    background-image: url("../imgwebpage/logocentral.png");
+    width: 1005px;
+    height: 582px;
+    position: absolute;
+    top: 7%;
+    left:20%;
+}
+#animation{
+    background-image: url("../imgwebpage/roling code.gif");
+    width: 1012px;
+    height: 586px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+}
+#cadastro1{
+    background-image: url("../imgwebpage/telacadastro1.png");
+    width: 961px;
+    height: 476px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 50px;
+    padding-top: 110px;
+}
+#telaperfil{
+    background-image: url("../imgwebpage/telaperfil.png");
+    width: 961px;
+    height: 476px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 50px;
+    padding-top: 110px;
+}
+#cadastrotelalateral{
+    height: 140px;
+    width: 275px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(63, 63, 63);
+    position: absolute;
+    left: 9px;
+    top: 130px;
+}
+#logstelalateral{
+    height: 200px;
+    width: 275px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(63, 63, 63);
+    position: absolute;
+    left: 9px;
+    top: 130px;
+    position:fixed;
+}
+#recuperasenhatelalateral{
+    height: 165px;
+    width: 275px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(63, 63, 63);
+    position: absolute;
+    left: 9px;
+    top: 130px;
+}
+#txtcad{
+    padding-left: 25%;
+    color: rgb(21, 255, 0);
+}
+.cadinp{
+    height: 33px;
+    float: left;
+    width: 500px;
+    margin-left: 300px;
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+#btnperfil{
+    border-radius: 5px;
+    border: black 5px solid;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    left: 160px;
+    top: 585px;
+    background-color: gray;
+}
+#btnperfil:hover{
+    cursor: pointer;
+    background-color: #ce1009;
+}
+#btncadastrar{
+    height: 40px;
+    width: 30%; 
+    border-radius: 5px;
+    margin-left: 14px;
+    position: absolute;
+    left: 43.5%;
+    top: 470px;
+}
+#cadastro2{
+    background-image: url("../imgwebpage/telacadastro2.png");
+    width: 961px;
+    height: 436px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+#recupsenha1{
+    background-image: url("../imgwebpage/recupsenha1.png");
+    width: 792px;
+    height: 451px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 220px;
+    padding-top: 135px;
+}
+.recupinp{
+    height: 40px;
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+    margin-bottom: 21px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-top: 12%;
+}
+#btnenviaremail{
+    height: 40px;
+    width: 30%; 
+    border-radius: 5px;
+    margin-left: 14px;
+    position: absolute;
+    left: 42%;
+    top: 400px;
+}
+#recupsenha2{
+    background-image: url("../imgwebpage/recupsenha2.png");
+    width: 742px;
+    height: 446px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 270px;
+    padding-top: 140px;
+}
+.recupinp2{
+    height: 40px;
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+    margin-bottom: 21px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-top: 20%;
+}
+#btnverificar{
+    height: 40px;
+    width: 30%; 
+    border-radius: 5px;
+    margin-left: 14px;
+    position: absolute;
+    left: 43.5%;
+    top: 400px;
+}
+#recupsenha3{
+    background-image: url("../imgwebpage/recupsenha3.png");
+    width: 682px;
+    height: 446px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 330px;
+    padding-top: 140px;
+}
+.recupinp3{
+    height: 40px;
+    float: left;
+    width: 50%;
+    margin-left: 5%;
+    margin-bottom: 21px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    margin-top: 3.7%;
+}
+#btnalterar{
+    height: 40px;
+    width: 30%; 
+    border-radius: 5px;
+    margin-left: 14px;
+    position: absolute;
+    left: 46%;
+    top: 400px;
+}
+#recupsenha4{
+    background-image: url("../imgwebpage/recupsenha4.png");
+    width: 742px;
+    height: 446px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 270px;
+    padding-top: 140px;
+}
+#iniciolalateral{
+    height: 320px;
+    width: 275px;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(63, 63, 63);
+    position: absolute;
+    left: 9px;
+    top: 130px;
+}
+.btninicio{
+    height: 40px;
+    width: 90%; 
+    border-radius: 5px;
+    margin-left: 14px;
+    margin-top: 16px;
+}
+form{
+    margin: 0%;
+    padding: 0%;
+}
+#instrucoes{
+    background-image: url("../imgwebpage/instrucoes.png");
+    width: 961px;
+    height: 436px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+#placar{
+    background-image: url("../imgwebpage/placarlideres.png");
+    width: 961px;
+    height: 436px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+#historia{
+    background-image: url("../imgwebpage/historia.png");
+    width: 961px;
+    height: 436px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+#loja{
+    background-image: url("../imgwebpage/loja.png");
+    width: 961px;
+    height: 436px;
+    position: absolute;
+    top: 44px;
+    left: 314px;
+    padding-left: 50px;
+    padding-top: 150px;
+}
+#quantidademods{
+    width: 961px;
+    height: 436px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.btnloja{
+    height: 40px;
+    width: 11%; 
+    border-radius: 5px;
+    position: absolute;
+}
+
+#coletebtn2{
+    position: absolute;
+    left: 22%;
+    top: 55px;   
+}
+#hpbtn2{
+    position: absolute;
+    left: 22%;
+    top: 168px;
+}
+#manabtn2{
+    position: absolute;
+    left: 22%;
+    top: 278px;
+}
+#dobrodanobtn2{
+    position: absolute;
+    left: 22%;
+    top: 391px;
+}
+#segundachancebtn2{
+    position: absolute;
+    left: 22%;
+    top: 497px;
+}
+#starterbtn2{
+    position: absolute;
+    left: 69%;
+    top: 490px;
+}
+.mostradoresstore{
+    font-size: 28px;
+}
+#pontosmark{
+    position: absolute;
+    left: 70%;
+    top: 210px;
+    font-size: 35px;
+}
+
+#coletebtn{
+    position: absolute;
+    left: 40.5%;
+    top: 70px;
+}
+#hpbtn{
+    position: absolute;
+    left: 40.5%;
+    top: 180px;
+}
+#manabtn{
+    position: absolute;
+    left: 40.5%;
+    top: 290px;
+}
+#dobrodanobtn{
+    position: absolute;
+    left: 40.5%;
+    top: 400px;
+}
+#segundachancebtn{
+    position: absolute;
+    left: 40.5%;
+    top: 510px;
+}
+#starterbtn{
+    position: absolute;
+    left: 87.5%;
+    top: 510px;
+}
+
+.sairbtn{
+    width: 120px;
+    height:  70px;
+    position: absolute;
+    left: 9px;
+    top: 460px;
+}
+
+.button {
+	height: 40px;
+	width: 90%;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 3%;
+}
+.button .outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	background: rgba(0,0,0,0.65);
+	border-radius: 14px;
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	box-shadow: inset rgba(0,0,0,0.85) 0px 1px 5px;
+	-webkit-box-shadow: inset rgba(0,0,0,0.85) 0px 1px 5px;
+	-moz-box-shadow: inset rgba(0,0,0,0.85) 0px 1px 5px;
+}
+.button .outer .height {
+	position: relative;
+	height: 100%;
+	margin-top: -15px;
+	padding-bottom: 15px;
+	background: #39a02d;
+	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	box-shadow: rgba(0,0,0,0.85) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 8px;
+	-webkit-box-shadow: rgba(0,0,0,0.85) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 8px;
+	-moz-box-shadow: rgba(0,0,0,0.85) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 8px;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+}       
+.button:hover .outer .height {
+	margin-top: -10px;
+	padding-bottom: 10px;
+	background: #cca216;
+	box-shadow: rgba(0,0,0,0.25) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 6px;
+	-webkit-box-shadow: rgba(0,0,0,0.25) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 6px;
+	-moz-box-shadow: rgba( 0,0,0,0.25) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 6px;
+}
+.button:active .outer .height {
+	margin-top: 0px;
+	padding-bottom: 0px;
+}
+.button .outer .height .inner {
+	line-height: 1.3em;
+	font-size: 30px;
+	letter-spacing: .05em;
+    position: relative;
+    color: black;
+	height: 100%;
+	text-align: center;
+	text-shadow: #8aff7b 0px 0px 1px;
+	background: #44d135;
+	background: -moz-linear-gradient(top, #80ec75 0%, #43d034 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#80ec75), color-stop(100%,#43d034)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #80ec75 0%,#43d034 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(top, #80ec75 0%,#43d034 100%); /* W3C */
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	box-shadow: inset rgba(255,255,255,0.85) 0px 0px 1px;
+	-webkit-box-shadow: inset rgba(255,255,255,0.85) 0px 0px 1px;
+	-moz-box-shadow: inset rgba(255,255,255,0.85) 0px 0px 1px;
+	-webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+}
+.button:hover .outer .height .inner{
+	text-shadow: #946705 0px 0px 1px;
+	background: #cca216; /* Old browsers */
+	background: -moz-linear-gradient(top, #cca216 0%, #cca216 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cca216), color-stop(100%,#cca216)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #cca216 0%,#cca216 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(top, #cca216 0%,#cca216 100%); /* W3C */
+}
+.button:active .outer .height .inner{
+	text-shadow: #745004 0px 1px 0px;
+	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	box-shadow: inset rgba(0,0,0,0.9) 0px 0px 8px;
+	-webkit-box-shadow: inset rgba(0,0,0,0.9) 0px 0px 8px;
+	-moz-box-shadow: inset rgba(0,0,0,0.9) 0px 0px 8px;
+	background: #a07c07; /* Old browsers */
+	background: -moz-linear-gradient(top, #a07c07 0%, #a07c07 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a07c07), color-stop(100%,#a07c07)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #a07c07 0%,#a07c07 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(top, #a07c07 0%,#a07c07 100%); /* W3C */
+}
+.button .outer .height .inner a{
+    position: absolute;
+    left: 0%;
+    width: 120%;
+    height: 140%;
+}
+.button .outer .height .inner a #link{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+#submitbutton{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-size:0;
+}
+#submitbuttonrecupsenha{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-size:0;
+    margin-left: -203px;
+}
+#submitbuttonrecupsenha:hover{
+    cursor: pointer;
+}
+#submitbuttonlogin{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    font-size:0;
+    margin-left: -113px;
+}
+#submitbuttonlogin:hover{
+    cursor: pointer;
+}
+#submitbutton:hover{
+    cursor: pointer;
+}
+a{
+    top: -20%;
+}
+h2{
+    line-height: 1.3em;
+	font-size: 30px;
+	letter-spacing: .05em;
+    color: black;
+    margin: 0%;
+    padding: 0%;
+    margin-left: -18%;
+    margin-top: 5px;
+}
+.buttoncadas h2{
+    line-height: 1.3em;
+	font-size: 30px;
+	letter-spacing: .05em;
+    color: black;
+    margin: 0%;
+    padding: 0%;
+    margin-top: 5px;
+}
+
+.buttoncadas {
+	height: 40px;
+	width: 40%;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 3%;
+    position: absolute;
+    top: 70%;
+    left: 25%;
+}
+.buttoncadas .outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 5px;
+	background: rgba(0,0,0,0.65);
+	border-radius: 14px;
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	box-shadow: inset rgba(0,0,0,0.85) 0px 1px 5px;
+	-webkit-box-shadow: inset rgba(0,0,0,0.85) 0px 1px 5px;
+	-moz-box-shadow: inset rgba(0,0,0,0.85) 0px 1px 5px;
+}
+.buttoncadas .outer .height {
+	position: relative;
+	height: 100%;
+	margin-top: -15px;
+	padding-bottom: 15px;
+	background: #ce1009;
+	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	box-shadow: rgba(0,0,0,0.85) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 8px;
+	-webkit-box-shadow: rgba(0,0,0,0.85) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 8px;
+	-moz-box-shadow: rgba(0,0,0,0.85) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 8px;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+}       
+.buttoncadas:hover .outer .height {
+	margin-top: -10px;
+	padding-bottom: 10px;
+	background: #cca216;
+	box-shadow: rgba(0,0,0,0.25) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 6px;
+	-webkit-box-shadow: rgba(0,0,0,0.25) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 6px;
+	-moz-box-shadow: rgba( 0,0,0,0.25) 0px 1px 1px, inset rgba(0,0,0,0.35) 0px -2px 6px;
+}
+.buttoncadas:active .outer .height {
+	margin-top: 0px;
+	padding-bottom: 0px;
+}
+.buttoncadas .outer .height .inner {
+	line-height: 1.3em;
+	font-size: 30px;
+	letter-spacing: .05em;
+    position: relative;
+    color: black;
+	height: 100%;
+	text-align: center;
+	text-shadow: #d14742 0px 0px 1px;
+	background: #ce1009;
+	background: -moz-linear-gradient(top, #d14742 0%, #ce1009 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d14742), color-stop(100%,#ce1009)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #d14742 0%,#ce1009 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(top, #ce1009 0%,#ce1009 100%); /* W3C */
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	box-shadow: inset rgba(255,255,255,0.85) 0px 0px 1px;
+	-webkit-box-shadow: inset rgba(255,255,255,0.85) 0px 0px 1px;
+	-moz-box-shadow: inset rgba(255,255,255,0.85) 0px 0px 1px;
+	-webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+}
+.buttoncadas:hover .outer .height .inner{
+	text-shadow: #946705 0px 0px 1px;
+	background: #cca216; /* Old browsers */
+	background: -moz-linear-gradient(top, #cca216 0%, #cca216 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cca216), color-stop(100%,#cca216)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #cca216 0%,#cca216 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(top, #cca216 0%,#cca216 100%); /* W3C */
+}
+.buttoncadas:active .outer .height .inner{
+	text-shadow: #745004 0px 1px 0px;
+	border-radius: 16px;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	box-shadow: inset rgba(0,0,0,0.9) 0px 0px 8px;
+	-webkit-box-shadow: inset rgba(0,0,0,0.9) 0px 0px 8px;
+	-moz-box-shadow: inset rgba(0,0,0,0.9) 0px 0px 8px;
+	background: #a07c07; /* Old browsers */
+	background: -moz-linear-gradient(top, #a07c07 0%, #a07c07 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a07c07), color-stop(100%,#a07c07)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #a07c07 0%,#a07c07 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(top, #a07c07 0%,#a07c07 100%); /* W3C */
+}
+
+
+
+
